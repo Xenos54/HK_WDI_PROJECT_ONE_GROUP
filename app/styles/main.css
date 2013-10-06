@@ -1,22 +1,31 @@
-body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+#gameboard {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-}
-
-.hero-unit h1 {
+    /*margin: 0 auto;
+    border: solid 1px #369;
+    width: 90px;
+    overflow: hidden;
+    "*/
+.cell {
+    float: left;
+    width: 78px;
+    height: 78px;
     font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: garamond;
+
 }
+
+.row {
+    clear: both;
+}
+
+.lt, .rt, .mt {border-bottom: 1px solid #222222;}
+.lc, .mc, .rc {border-bottom: 1px solid #222222;}
+.lt, .lc, .lb {border-right: 1px solid #222222;}
+.mc, .mt, .mb {border-right: 1px solid #222222;}
+.x {color: aquamarine;}
