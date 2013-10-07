@@ -5,6 +5,7 @@ function changeSquareContent(location, className) {
 
 var currentPlayer = "x";
 
+
 function makeNextMoveAt(location) {
   markSquareAsOccupiedAt(location);
   swapCurrentPlayerToOpponent();
@@ -31,9 +32,12 @@ function handleClick(location) {
 	if (currentSquareClickedAlready(location)) {
 		// do nothing
 	} else {
-		makeNextMoveAt(location)
+		makeNextMoveAt(location);
+    console.log (topRow);
 	}
 }
+
+
 
 // Homework 1
 // this function need to return true or false
@@ -41,17 +45,28 @@ function currentSquareClickedAlready(location) {
   // TODO
   // check if the square at location has been occupied
   // 
-  // ... your code here
-  // ... your code here
+  // ... check to see if the input location already has either an x or o assigned to it, ie from the markSquareAsOccupiedAt function
+  var currentSquareContent = document.getElementById('cell' + location).innerHTML;
+  if ((currentSquareContent =="x") || (currentSquareContent == "o") ){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // Homework 2
+
+var xWins =["x","x","x"];
+var topRow =[];
 // this function need to return true or false
 function isTopHorizontalThreeOccupiedByMe() {
-  // TODO
   // check if the top three square is occupied by X
-  // 
-  // ... your code here
+  //pick up the contents of the top row. create a new ARRAY for this.
+  var topRow = [document.getElementById('cell1').innerHTML,document.getElementById('cell2').innerHTML,document.getElementById('cell3').innerHTML];
+  //check if theyre all the same (ie the index refs), if so return true, else false.
+
+
+  //if true, alert(you win)
 }
 
 
