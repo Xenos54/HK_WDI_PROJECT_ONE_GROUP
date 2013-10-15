@@ -15,10 +15,14 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body>
+  <body data-ng-app="tickeyApp">
+
+    <header>
+    <h1>Tic Tac Toe App</h1>
+    </header>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <![endif]-->    
 
     <!--[if lt IE 9]>
       <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -27,27 +31,21 @@
 
     <!-- Add your site or application content here -->
 
-  <div id ="gameboard">
-    <div class="row">
-      <div class="cell lt" id="cell1" onclick="handleClick(1)"></div>
-      <div class="cell mt" id="cell2" onclick="handleClick(2)"></div>
-      <div class="cell rt" id="cell3" onclick="handleClick(3)"></div>
-    </div>
-      <div class="row">
-      <div class="cell lc" id="cell4" onclick="handleClick(4)"></div>
-      <div class="cell mc" id="cell5" onclick="handleClick(5)"></div>
-      <div class="cell rc" id="cell6" onclick="handleClick(6)"></div>
-    </div>
-    <div class="row">
-      <div class="cell lb" id="cell7" onclick="handleClick(7)"></div>
-      <div class="cell mb" id="cell8" onclick="handleClick(8)"></div>
-      <div class="cell rb" id="cell9" onclick="handleClick(9)"></div>
-    </div>
-  </div>
     
+    <div data-ng-view=""></div>
+      <a href="#/game_board">play now!</a>
+      <a href="#/how_to">how to!</a>
+      <a href="#/home_page">home_page!</a>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+        <script src="bower_components/angular/angular.js"></script>
         <script src="scripts/app.js"></script>
-      
+        <script src="scripts/controllers/game_board.js"></script>
+        <script src="scripts/controllers/how_to.js"></script>
+        <script src="scripts/controllers/home_page.js"></script>
+        <script src="scripts/Directive/iansDirective.js"></script>
+
+
         <!-- endbuild -->
 </body>
 </html>
