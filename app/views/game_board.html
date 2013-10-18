@@ -1,21 +1,21 @@
 {{name}}  
       <div id="gameboard">
         <div class="row">
-          <div id="cell1" class="cell lt" data-ng-click="handleClick(1)"></div>
-          <div id="cell2" class="cell mt" data-ng-click="handleClick(2)"></div>
-          <div id="cell3" class="cell rt" data-ng-click="handleClick(3)"></div>
+          <div id="cell1" class="cell lt" data-ng-click="handleClick(1)">{{gameBoard[0]}}</div>
+          <div id="cell2" class="cell mt" data-ng-click="handleClick(2)">{{gameBoard[1]}}</div>
+          <div id="cell3" class="cell rt" data-ng-click="handleClick(3)">{{gameBoard[2]}}</div>
         </div>
 
         <div class="row">
-          <div id="cell4" class="cell lc" data-ng-click="handleClick(4)"></div>
-          <div id="cell5" class="cell mc" data-ng-click="handleClick(5)"></div>
-          <div id="cell6" class="cell rc" data-ng-click="handleClick(6)"></div>
+          <div id="cell4" class="cell lc" data-ng-click="handleClick(4)">{{gameBoard[3]}}</div>
+          <div id="cell5" class="cell mc" data-ng-click="handleClick(5)">{{gameBoard[4]}}</div>
+          <div id="cell6" class="cell rc" data-ng-click="handleClick(6)">{{gameBoard[5]}}</div>
         </div>
 
         <div class="row">
-          <div id="cell7" class="cell lb" data-ng-click="handleClick(7)"></div>
-          <div id="cell8" class="cell mb" data-ng-click="handleClick(8)"></div>
-          <div id="cell9" class="cell rb" data-ng-click="handleClick(9)"></div>
+          <div id="cell7" class="cell lb" data-ng-click="handleClick(7)">{{gameBoard[6]}}</div>
+          <div id="cell8" class="cell mb" data-ng-click="handleClick(8)">{{gameBoard[7]}}</div>
+          <div id="cell9" class="cell rb" data-ng-click="handleClick(9)">{{gameBoard[8]}}</div>
         </div>
       </div>
     
@@ -26,15 +26,20 @@
 </div>
 
     <div>Current Player: {{currentSymbol}}</div>
-<div>
-</div>
+<div></div>
 <div>
 </div>
 
 
     <div>{{minutes}}:{{seconds}}</div>
-
+    <button ng-click="getName()" >What's your name</button>
+    <button ng-click="addWinToLeaderBoard()" >Add win</button>
     <button ng-click="startTimer()" >Start Timer</button>
     <button ng-click="endTimer()"  >End Timer</button>
+
+<ul>
+  <li>Leader Board</li>
+  <li data-ng-repeats="(name, score) in leaderData.name">{{name}}:{{score}}</li>
+</ul>
 
     
